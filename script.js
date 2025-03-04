@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(i === 14) {
             projectDiv.innerHTML = `
                 <video width="100%" controls>
-                    <source src="images/14.mp4" type="video/mp4">
+                    <source src="14.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="project-info">
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         } else {
             projectDiv.innerHTML = `
-                <img src="images/${i}.png" alt="Project ${i}" loading="lazy">
+                <img src="${i}.png" alt="Project ${i}" loading="lazy">
                 <div class="project-info">
                     <h2>Project ${i}</h2>
                     <p>Description of project ${i}</p>
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function startAutoPlay() {
         autoPlayInterval = setInterval(() => {
             showSlide(currentSlide += 1);
-        }, 5000); // Change slide every 5 seconds
+        }, 5000);
     }
 
     function stopAutoPlay() {
@@ -82,6 +82,11 @@ document.addEventListener('DOMContentLoaded', function() {
         stopAutoPlay();
         showSlide(currentSlide += 1);
     });
+
+    // Show navigation elements
+    prevBtn.style.display = 'block';
+    nextBtn.style.display = 'block';
+    counter.style.display = 'block';
 
     // Start autoplay
     startAutoPlay();
